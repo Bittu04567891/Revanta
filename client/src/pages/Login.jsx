@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Container = styled.div`
   width: 100vw;
@@ -53,21 +55,25 @@ const Link = styled.a`
   text-decoration: underline;
   cursor: pointer;
 `;
-
+const Outside = styled.div``;
 const Login = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Title>SIGN IN</Title>
-        <Form>
-          <Input placeholder="username" />
-          <Input placeholder="password" />
-          <Button>LOGIN</Button>
-          <Link>DO NOT REMEMBER THE PASSWORD? </Link>
-          <Link>CREATE A NEW ACCOUNT </Link>
-        </Form>
-      </Wrapper>
-    </Container>
+    <Outside>
+      <Navbar />
+      <Container>
+        <Wrapper>
+          <Title>SIGN IN</Title>
+          <Form>
+            <Input placeholder="username" />
+            <Input placeholder="password" />
+            <Button>LOGIN</Button>
+            <Link>DO NOT REMEMBER THE PASSWORD? </Link>
+            <Link>CREATE A NEW ACCOUNT </Link>
+          </Form>
+        </Wrapper>
+      </Container>
+      <Footer />
+    </Outside>
   );
 };
 

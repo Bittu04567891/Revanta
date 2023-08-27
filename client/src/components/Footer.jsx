@@ -10,10 +10,15 @@ import {
 
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
   background-color: #94dd94;
+  text-decoration: none;
+  ${mobile({
+    flexDirection: "column",
+  })}
 `;
 const Left = styled.div`
   flex: 1;
@@ -44,6 +49,9 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({
+    display: "none",
+  })}
 `;
 const Title = styled.h3`
   margin-bottom: 30px;
@@ -58,10 +66,14 @@ const List = styled.ul`
 const ListItem = styled.li`
   width: 50%;
   margin-bottom: 10px;
+  text-decoration: none;
 `;
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({
+    backgroundColor: "#fff8f8",
+  })}
 `;
 const ContactItem = styled.div`
   margin-bottom: 20px;
@@ -85,36 +97,62 @@ const Footer = () => {
           the potential of renewable energy in the automotive sector.
         </Desc>
         <SocialContainer>
-          <SocialIcon color="3B5999">
-            <FacebookOutlined />
-          </SocialIcon>
-          <SocialIcon color="E4405F">
-            <Instagram />
-          </SocialIcon>
+          <a href="https://m.facebook.com/aboutrevanta/" target="_blank">
+            <SocialIcon color="3B5999">
+              <FacebookOutlined />
+            </SocialIcon>
+          </a>
+          <a
+            href="https://www.instagram.com/revanta_nit_jsr/?hl=en"
+            target="_blank"
+          >
+            <SocialIcon color="E4405F">
+              <Instagram />
+            </SocialIcon>
+          </a>
           <SocialIcon color="55ACEE">
             <Twitter />
           </SocialIcon>
-          <SocialIcon color="0e76a8">
-            <LinkedIn />
-          </SocialIcon>
+          <a
+            href="https://www.linkedin.com/company/team-revanta/mycompany/"
+            target="_blank"
+          >
+            <SocialIcon color="0e76a8">
+              <LinkedIn />
+            </SocialIcon>
+          </a>
         </SocialContainer>
       </Left>
       <Center>
         <Title>Useful Links</Title>
         <List>
-          <ListItem>Home</ListItem>
+          <ListItem>
+            <Link to="/Revanta">Home</Link>
+          </ListItem>
 
-          <Link to="/Revanta/about">
-            <ListItem>About</ListItem>
-          </Link>
-          <ListItem>Services</ListItem>
-          <ListItem>Contact Us</ListItem>
-          <ListItem>Sponsor Us</ListItem>
-          <ListItem>Alumni</ListItem>
-          <Link to="/Revanta/members">
-            <ListItem>Members</ListItem>
-          </Link>
-          <ListItem>Copyright</ListItem>
+          <ListItem>
+            <Link to="/Revanta/about">About</Link>
+          </ListItem>
+
+          <ListItem>
+            <Link to="/Revanta/services">Services</Link>
+          </ListItem>
+          <ListItem>
+            <Link to="/Revanta/contact">Contact Us</Link>
+          </ListItem>
+          <ListItem>
+            <Link to="/Revanta/sponsor">Sponsor Us</Link>
+          </ListItem>
+          <ListItem>
+            <Link to="/Revanta/alumni">Alumni</Link>
+          </ListItem>
+
+          <ListItem>
+            <Link to="/Revanta/members">Members</Link>
+          </ListItem>
+          <ListItem>
+            <Link to="/Revanta/copyright">Copyright</Link>
+          </ListItem>
         </List>
       </Center>
       <Right>

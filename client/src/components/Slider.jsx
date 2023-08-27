@@ -1,8 +1,9 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import { sliderItems } from "../data";
 import { Link } from "react-router-dom";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100%;
@@ -10,6 +11,9 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+  ${mobile({
+    display: "none",
+  })}
 `;
 const Arrow = styled.div`
   width: 50px;
@@ -74,6 +78,16 @@ const Button = styled.button`
 `;
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSlideIndex((prevIndex) =>
+        prevIndex < sliderItems.length - 1 ? prevIndex + 1 : 0
+      );
+    }, 3000);
+    return () => {
+      clearInterval(interval); // Clean up the interval on component unmount
+    };
+  }, []);
   const handleClick = (direction) => {
     if (direction === "left") {
       setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
@@ -96,7 +110,7 @@ const Slider = () => {
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
 
-              <Link to="/Revanta/achievements">
+              <Link to={`/Revanta/${item.page}`}>
                 <Button>MORE</Button>
               </Link>
             </InfoContainer>
