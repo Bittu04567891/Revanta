@@ -2,6 +2,7 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
 import { useState } from "react";
 import { styled } from "styled-components";
 import { sliderItems } from "../data";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -89,12 +90,15 @@ const Slider = () => {
         {sliderItems.map((item) => (
           <Slide bg={item.bg} key={item.id}>
             <ImgContainer>
-              <Image src={item.img} />
+              <Image src={item.img} alt="Not found" />
             </ImgContainer>
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button>MORE</Button>
+
+              <Link to="/Revanta/achievements">
+                <Button>MORE</Button>
+              </Link>
             </InfoContainer>
           </Slide>
         ))}

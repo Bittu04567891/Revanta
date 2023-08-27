@@ -1,19 +1,19 @@
 import React from "react";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Slider from "./components/Slider";
-import Members from "./components/Members";
-import Newsletter from "./components/Newsletter";
-
+import Home from "./pages/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About from "./pages/About";
+import Achievements from "./pages/Achievements";
+import MembersPage from "./pages/MembersPage";
+import Login from "./pages/Login";
 const App = () => {
   return (
-    <>
-      <Navbar />
-      <Slider />
-      <Members />
-      <Newsletter />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/Revanta/" element={<Home />} />
+        <Route path="/Revanta/members" element={<MembersPage />} />
+        <Route path="/Revanta/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
