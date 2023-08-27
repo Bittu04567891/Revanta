@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Revanta/static/js/main.8bc3954a.js",
+    "main.js": "/Revanta/static/js/main.dca7ec25.js",
     "index.html": "/Revanta/index.html",
-    "main.8bc3954a.js.map": "/Revanta/static/js/main.8bc3954a.js.map"
+    "main.dca7ec25.js.map": "/Revanta/static/js/main.dca7ec25.js.map"
   },
   "entrypoints": [
-    "static/js/main.8bc3954a.js"
+    "static/js/main.dca7ec25.js"
   ]
 }
